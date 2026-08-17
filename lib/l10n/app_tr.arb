@@ -1,0 +1,445 @@
+{
+  "@@locale": "tr",
+  "appName": "YKS Level",
+  "commonContinue": "Devam Et",
+  "commonRetry": "Tekrar Dene",
+  "commonCancel": "Vazgeç",
+  "commonSave": "Kaydet",
+  "commonClose": "Kapat",
+  "commonNext": "İleri",
+  "commonSkip": "Atla",
+  "commonError": "Bir şeyler ters gitti. Tekrar deneyebilirsin.",
+  "commonEmpty": "Burada henüz bir şey yok.",
+  "commonSoon": "Yakında",
+  "onboardingTitle1": "YKS çalışmak biraz daha oyun gibi olsun.",
+  "onboardingBody1": "Kısa görevleri tamamla, XP kazan ve seviyeni yükselt.",
+  "onboardingTitle2": "Streak’ini koru",
+  "onboardingBody2": "Her gün birkaç soru çözerek serini devam ettir.",
+  "onboardingTitle3": "Liglerde yüksel",
+  "onboardingBody3": "Haftalık XP sıralamasında diğer öğrencilerle yarış.",
+  "onboardingCta": "Başlayalım",
+  "authWelcomeTitle": "Hoş geldin!",
+  "authWelcomeBody": "Hesabınla ilerlemen buluta kaydedilir ve ligde yarışabilirsin.",
+  "authSignIn": "Giriş Yap",
+  "authSignUp": "Kayıt Ol",
+  "authEmail": "E-posta",
+  "authPassword": "Şifre",
+  "authUsername": "Kullanıcı adı",
+  "authGoogle": "Google ile devam et",
+  "authGuest": "Misafir olarak devam et",
+  "authForgotPassword": "Şifremi unuttum",
+  "authSwitchToSignUp": "Hesabın yok mu? Kayıt ol",
+  "authSwitchToSignIn": "Zaten hesabın var mı? Giriş yap",
+  "authGuestNotice": "Misafir modunda ilerlemen yalnızca bu cihazda saklanır.",
+  "authEmailRequired": "E-posta gerekli.",
+  "authEmailInvalid": "Geçerli bir e-posta gir.",
+  "authPasswordRequired": "Şifre gerekli.",
+  "authPasswordTooShort": "Şifre en az 6 karakter olmalı.",
+  "authErrorInvalid": "E-posta veya şifre hatalı.",
+  "authErrorEmailTaken": "Bu e-posta zaten kayıtlı.",
+  "authErrorWeakPassword": "Şifren en az 6 karakter olmalı.",
+  "authErrorNetwork": "Bağlanamadık. İnternetini kontrol edip tekrar dene.",
+  "authErrorNotConfigured": "Giriş şu an kullanılamıyor. Misafir olarak devam edebilirsin.",
+  "authResetSent": "Şifre sıfırlama bağlantısını e-postana gönderdik.",
+  "setupTitle": "Seni tanıyalım",
+  "setupUsernameLabel": "Sana nasıl hitap edelim?",
+  "setupUsernameHint": "Kullanıcı adın",
+  "setupUsernameRequired": "Bir kullanıcı adı gir.",
+  "setupTrackLabel": "Hangi alanda hazırlanıyorsun?",
+  "setupTrackOptional": "İstersen bunu sonra da değiştirebilirsin.",
+  "trackTyt": "TYT",
+  "trackSayisal": "Sayısal",
+  "trackEsitAgirlik": "Eşit Ağırlık",
+  "trackSozel": "Sözel",
+  "trackDil": "Dil",
+  "trackUndecided": "Henüz seçmedim",
+  "navHome": "Ana Sayfa",
+  "navStudy": "Çalış",
+  "navLeague": "Lig",
+  "navProfile": "Profil",
+  "greetingMorning": "Günaydın 👋",
+  "greetingDay": "İyi günler 👋",
+  "greetingEvening": "İyi akşamlar 👋",
+  "homeDefaultName": "Öğrenci",
+  "homeLevelBadge": "LVL {level}",
+  "@homeLevelBadge": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "homeXpOfTotal": "{current} / {total} XP",
+  "@homeXpOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "homeXpToNext": "Bir sonraki seviyeye {xp} XP kaldı",
+  "@homeXpToNext": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "homeMaxLevel": "En yüksek seviyedesin. Efsanesin!",
+  "homeQuestsTitle": "Bugünün Görevleri",
+  "homeDailyQuestionTitle": "Günün Sorusu",
+  "homeDailyQuestionCta": "Günün sorusunu çöz",
+  "homeDailyQuestionDone": "Bugünün sorusunu çözdün 🎉",
+  "homeFactTitle": "Bugünün Bilgisi",
+  "homeTodayTitle": "Bugünkü Özetin",
+  "homeTodaySolved": "Çözülen",
+  "homeTodayXp": "Kazanılan XP",
+  "homeTodayAccuracy": "Doğruluk",
+  "homeGuestBannerTitle": "İlerlemeni kaybetme",
+  "homeGuestBannerBody": "Hesap oluştur, ilerlemeni yedekle ve ligde yarış.",
+  "homeGuestBannerCta": "Hesap Oluştur",
+  "homeStreakDays": "{days} günlük seri",
+  "@homeStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeStreakAtRisk": "Serini korumak için bugün {count} soru çöz.",
+  "@homeStreakAtRisk": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "questSolveFive": "5 soru çöz",
+  "questCorrectFive": "5 doğru cevap ver",
+  "questMathSession": "Bir TYT Matematik seti tamamla",
+  "questDailyQuestion": "Günün sorusunu çöz",
+  "questCompleted": "Tamamlandı",
+  "questProgress": "{current} / {target}",
+  "@questProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "xpReward": "+{xp} XP",
+  "@xpReward": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "studyTitle": "Çalış",
+  "studySubtitle": "Bir ders seç ve sete başla.",
+  "studySectionTyt": "TYT",
+  "studySectionAyt": "AYT",
+  "studySolvedCount": "{count} soru çözüldü",
+  "@studySolvedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studyProgressPercent": "%{percent}",
+  "@studyProgressPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "studyTopicsTitle": "Konular",
+  "studyAllTopics": "Karışık set",
+  "studyAllTopicsBody": "Bu dersten karışık sorular gelsin.",
+  "studyStart": "Başla",
+  "studyEmpty": "Bu derste henüz soru yok.",
+  "masteryNew": "Yeni",
+  "masteryBeginner": "Başlangıç",
+  "masteryIntermediate": "Gelişiyor",
+  "masteryAdvanced": "İyi gidiyor",
+  "masteryMaster": "Usta",
+  "quizProgress": "{current} / {total}",
+  "@quizProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "quizCorrect": "Doğru! 🔥",
+  "quizCorrectAlt": "Süpersin!",
+  "quizCorrectAlt2": "Devam!",
+  "quizWrong": "Az kaldı!",
+  "quizWrongAlt": "Bir sonrakini alırsın.",
+  "quizCorrectAnswer": "Doğru cevap: {option}",
+  "@quizCorrectAnswer": {
+    "placeholders": {
+      "option": {
+        "type": "String"
+      }
+    }
+  },
+  "quizExplanation": "Açıklama",
+  "quizCombo": "Combo x{combo}",
+  "@quizCombo": {
+    "placeholders": {
+      "combo": {
+        "type": "int"
+      }
+    }
+  },
+  "quizOnFire": "On Fire 🔥",
+  "quizFinish": "Bitir",
+  "quizExitTitle": "Setten çıkılsın mı?",
+  "quizExitBody": "Bu setteki ilerlemen kaydedilmeyecek.",
+  "quizExitConfirm": "Çık",
+  "quizExitStay": "Devam et",
+  "quizLoadFailed": "Sorular yüklenemedi.",
+  "resultTitleGreat": "Harika iş!",
+  "resultTitleGood": "Görev tamamlandı!",
+  "resultCorrectOf": "{correct} / {total} doğru",
+  "@resultCorrectOf": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "resultAccuracy": "Doğruluk",
+  "resultBestCombo": "En iyi combo",
+  "resultDuration": "Süre",
+  "resultPlayAgain": "Tekrar Oyna",
+  "resultHome": "Ana Sayfa",
+  "resultBonusCta": "Bonus XP Kazan",
+  "resultBonusEarned": "+{xp} bonus XP kazandın!",
+  "@resultBonusEarned": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "resultBonusFailed": "Reklam şu an yüklenemedi. Kazandığın XP güvende.",
+  "resultTodayXp": "Bugün +{xp} XP kazandın.",
+  "@resultTodayXp": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "resultQuestDone": "Görev tamamlandı: {title}",
+  "@resultQuestDone": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpTitle": "LEVEL UP! 🎉",
+  "levelUpBody": "Seviye {level} oldun!",
+  "@levelUpBody": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "streakBanner": "🔥 {days} günlük seri!",
+  "@streakBanner": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "leagueTitle": "Lig",
+  "leagueWeeklySubtitle": "Haftalık XP sıralaması",
+  "leagueBronze": "Bronz",
+  "leagueSilver": "Gümüş",
+  "leagueGold": "Altın",
+  "leaguePlatinum": "Platin",
+  "leagueDiamond": "Elmas",
+  "leagueYourWeeklyXp": "Bu hafta {xp} XP",
+  "@leagueYourWeeklyXp": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "leagueToNext": "{league} ligine {xp} XP kaldı",
+  "@leagueToNext": {
+    "placeholders": {
+      "league": {
+        "type": "String"
+      },
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "leagueTopReached": "En üst ligdesin 👑",
+  "leagueYou": "Sen",
+  "leagueEmpty": "Bu hafta henüz kimse XP kazanmamış. İlk sen ol!",
+  "leagueResetInfo": "Sıralama her pazartesi sıfırlanır.",
+  "leagueSignInTitle": "Sıralamaya katıl",
+  "leagueSignInBody": "Ligde yarışmak için bir hesap oluşturman yeterli.",
+  "leagueSignInCta": "Hesap Oluştur",
+  "leagueOffline": "Sıralama şu an yüklenemedi.",
+  "profileTitle": "Profil",
+  "profileGuest": "Misafir",
+  "profileLevel": "Seviye {level}",
+  "@profileLevel": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "profileTotalXp": "{xp} XP",
+  "@profileTotalXp": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "profileStatsTitle": "İstatistikler",
+  "statTotalQuestions": "Toplam soru",
+  "statTotalCorrect": "Toplam doğru",
+  "statAccuracy": "Doğruluk oranı",
+  "statCurrentStreak": "Mevcut seri",
+  "statLongestStreak": "En uzun seri",
+  "statStudyDays": "Toplam çalışma günü",
+  "profileSubjectsTitle": "Ders İlerlemen",
+  "profileSubjectsEmpty": "Henüz soru çözmedin. Hadi başlayalım!",
+  "profileAchievementsTitle": "Başarımlar",
+  "profileAchievementsCount": "{unlocked} / {total}",
+  "@profileAchievementsCount": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "profileEdit": "Profili Düzenle",
+  "profileEditTitle": "Profili düzenle",
+  "profileAvatarLabel": "Avatarını seç",
+  "profilePremiumActive": "Premium üye",
+  "profilePremiumCta": "Premium’a geç",
+  "profileSettings": "Ayarlar",
+  "profileDaysUnit": "gün",
+  "achFirstStepName": "İlk Adım",
+  "achFirstStepBody": "İlk soruyu çöz.",
+  "achWarmingUpName": "Isınmaya Başladık",
+  "achWarmingUpBody": "10 soru çöz.",
+  "achHundredName": "100!",
+  "achHundredBody": "100 soru çöz.",
+  "achStreakStartName": "Seri Başlangıcı",
+  "achStreakStartBody": "3 günlük seriye ulaş.",
+  "achOneWeekName": "Bir Hafta",
+  "achOneWeekBody": "7 günlük seriye ulaş.",
+  "achOnFireName": "On Fire",
+  "achOnFireBody": "Arka arkaya 10 doğru cevap ver.",
+  "achMathematicianName": "Matematikçi",
+  "achMathematicianBody": "100 matematik sorusu çöz.",
+  "achievementUnlocked": "Başarım açıldı: {name}",
+  "@achievementUnlocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumTitle": "YKS Level Premium",
+  "premiumSubtitle": "Daha odaklı çalış, reklamsız ilerle.",
+  "premiumBenefitAds": "Reklamsız deneyim",
+  "premiumBenefitStats": "Gelişmiş istatistikler",
+  "premiumBenefitBadge": "Özel profil rozeti",
+  "premiumBenefitModes": "Ek çalışma modları",
+  "premiumCtaPrice": "{price} / ay",
+  "@premiumCtaPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumCtaLoading": "Fiyat alınıyor...",
+  "premiumCtaUnavailable": "Şu an kullanılamıyor",
+  "premiumRestore": "Satın Alımları Geri Yükle",
+  "premiumPrivacy": "Gizlilik Politikası",
+  "premiumTerms": "Kullanım Koşulları",
+  "premiumActiveTitle": "Premium aktif 🎉",
+  "premiumActiveBody": "Teşekkürler! Reklamsız çalışmanın tadını çıkar.",
+  "premiumRestoreSuccess": "Satın alımların geri yüklendi.",
+  "premiumRestoreNone": "Geri yüklenecek bir satın alım bulunamadı.",
+  "premiumPurchaseFailed": "Satın alma tamamlanamadı. Tekrar deneyebilirsin.",
+  "premiumFreeNote": "Ücretsiz sürümde tüm dersler ve sorular açık kalır.",
+  "premiumRenewNote": "Abonelik her ay otomatik yenilenir. Google Play üzerinden istediğin zaman iptal edebilirsin.",
+  "premiumGracePeriod": "Ödemende bir sorun var. Google Play üzerinden kontrol et.",
+  "premiumExpired": "Aboneliğin sona erdi.",
+  "settingsTitle": "Ayarlar",
+  "settingsSectionApp": "Uygulama",
+  "settingsSectionAccount": "Hesap",
+  "settingsSectionAbout": "Hakkında",
+  "settingsNotifications": "Bildirimler",
+  "settingsNotificationsBody": "Günlük çalışma hatırlatması al.",
+  "settingsReminderTime": "Hatırlatma Saati",
+  "settingsTheme": "Tema",
+  "settingsThemeSystem": "Sistem",
+  "settingsThemeLight": "Açık",
+  "settingsThemeDark": "Koyu",
+  "settingsSound": "Ses Efektleri",
+  "settingsHaptics": "Dokunsal Geri Bildirim",
+  "settingsPrivacy": "Gizlilik Politikası",
+  "settingsTerms": "Kullanım Koşulları",
+  "settingsContact": "İletişim",
+  "settingsRestore": "Satın Alımları Geri Yükle",
+  "settingsSignIn": "Giriş Yap",
+  "settingsSignOut": "Çıkış Yap",
+  "settingsDeleteAccount": "Hesabı Sil",
+  "settingsVersion": "Sürüm {version}",
+  "@settingsVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsSignOutTitle": "Çıkış yapılsın mı?",
+  "settingsSignOutBody": "Cihazdaki ilerlemen silinmez.",
+  "settingsDeleteTitle": "Hesabın silinsin mi?",
+  "settingsDeleteBody": "Hesabın ve buluttaki tüm verilerin kalıcı olarak silinir. Bu işlem geri alınamaz.",
+  "settingsDeleteSuccess": "Hesabın silindi.",
+  "settingsDeleteFailed": "Hesap silinemedi. Daha sonra tekrar dene.",
+  "settingsNotificationDenied": "Bildirim izni verilmedi. Cihaz ayarlarından açabilirsin.",
+  "settingsLinkFailed": "Bağlantı açılamadı.",
+  "notificationChannelName": "Günlük hatırlatma",
+  "notificationTitle": "🔥 Streak’in seni bekliyor!",
+  "notificationBody": "Bugünün 5 sorusunu çöz, serini bozma.",
+  "notificationBodyAlt": "10 dakikalık YKS görevin hazır."
+}

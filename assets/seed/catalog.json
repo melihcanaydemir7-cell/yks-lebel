@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "subjects": [
+    {
+      "code": "tyt_matematik",
+      "name": "Matematik",
+      "exam_type": "TYT",
+      "icon": "calculate",
+      "color": "#4F6BFF",
+      "sort_order": 10,
+      "is_active": true,
+      "topics": [
+        { "code": "temel_kavramlar", "name": "Temel Kavramlar", "sort_order": 10 },
+        { "code": "sayi_basamaklari", "name": "Sayı Basamakları", "sort_order": 20 },
+        { "code": "bolme_bolunebilme", "name": "Bölme ve Bölünebilme", "sort_order": 30 },
+        { "code": "ebob_ekok", "name": "EBOB EKOK", "sort_order": 40 },
+        { "code": "rasyonel_sayilar", "name": "Rasyonel Sayılar", "sort_order": 50 },
+        { "code": "uslu_sayilar", "name": "Üslü Sayılar", "sort_order": 60 },
+        { "code": "koklu_sayilar", "name": "Köklü Sayılar", "sort_order": 70 },
+        { "code": "problemler", "name": "Problemler", "sort_order": 80 },
+        { "code": "fonksiyonlar", "name": "Fonksiyonlar", "sort_order": 90 }
+      ]
+    },
+    {
+      "code": "tyt_turkce",
+      "name": "Türkçe",
+      "exam_type": "TYT",
+      "icon": "menu_book",
+      "color": "#FF6B4F",
+      "sort_order": 20,
+      "is_active": true,
+      "topics": [
+        { "code": "sozcukte_anlam", "name": "Sözcükte Anlam", "sort_order": 10 },
+        { "code": "cumlede_anlam", "name": "Cümlede Anlam", "sort_order": 20 },
+        { "code": "paragraf", "name": "Paragraf", "sort_order": 30 },
+        { "code": "ses_bilgisi", "name": "Ses Bilgisi", "sort_order": 40 },
+        { "code": "yazim_kurallari", "name": "Yazım Kuralları", "sort_order": 50 },
+        { "code": "noktalama", "name": "Noktalama İşaretleri", "sort_order": 60 },
+        { "code": "sozcuk_turleri", "name": "Sözcük Türleri", "sort_order": 70 },
+        { "code": "cumlenin_ogeleri", "name": "Cümlenin Ögeleri", "sort_order": 80 },
+        { "code": "anlatim_bozuklugu", "name": "Anlatım Bozuklukları", "sort_order": 90 }
+      ]
+    },
+    {
+      "code": "tyt_geometri",
+      "name": "Geometri",
+      "exam_type": "TYT",
+      "icon": "change_history",
+      "color": "#00B3A4",
+      "sort_order": 30,
+      "is_active": true,
+      "topics": [
+        { "code": "temel_geometri", "name": "Temel Geometrik Kavramlar", "sort_order": 10 },
+        { "code": "ucgenler", "name": "Üçgenler", "sort_order": 20 },
+        { "code": "dortgenler", "name": "Dörtgenler ve Çokgenler", "sort_order": 30 },
+        { "code": "cember_daire", "name": "Çember ve Daire", "sort_order": 40 },
+        { "code": "kati_cisimler", "name": "Katı Cisimler", "sort_order": 50 },
+        { "code": "analitik_geometri", "name": "Analitik Geometri", "sort_order": 60 }
+      ]
+    },
+    {
+      "code": "tyt_fizik",
+      "name": "Fizik",
+      "exam_type": "TYT",
+      "icon": "bolt",
+      "color": "#8A5CF6",
+      "sort_order": 40,
+      "is_active": true,
+      "topics": [
+        { "code": "fizik_bilimine_giris", "name": "Fizik Bilimine Giriş", "sort_order": 10 },
+        { "code": "madde_ozellikleri", "name": "Madde ve Özellikleri", "sort_order": 20 },
+        { "code": "kuvvet_hareket", "name": "Kuvvet ve Hareket", "sort_order": 30 },
+        { "code": "basinc", "name": "Basınç ve Kaldırma Kuvveti", "sort_order": 40 },
+        { "code": "is_guc_enerji", "name": "İş, Güç ve Enerji", "sort_order": 50 },
+        { "code": "isi_sicaklik", "name": "Isı ve Sıcaklık", "sort_order": 60 },
+        { "code": "elektrik_manyetizma", "name": "Elektrik ve Manyetizma", "sort_order": 70 },
+        { "code": "optik", "name": "Optik", "sort_order": 80 }
+      ]
+    },
+    {
+      "code": "tyt_kimya",
+      "name": "Kimya",
+      "exam_type": "TYT",
+      "icon": "science",
+      "color": "#F0A500",
+      "sort_order": 50,
+      "is_active": true,
+      "topics": [
+        { "code": "kimya_bilimi", "name": "Kimya Bilimi", "sort_order": 10 },
+        { "code": "atom_periyodik", "name": "Atom ve Periyodik Sistem", "sort_order": 20 },
+        { "code": "kimyasal_turler", "name": "Kimyasal Türler Arası Etkileşimler", "sort_order": 30 },
+        { "code": "maddenin_halleri", "name": "Maddenin Hâlleri", "sort_order": 40 },
+        { "code": "karisimlar", "name": "Karışımlar", "sort_order": 50 },
+        { "code": "asit_baz_tuz", "name": "Asit, Baz ve Tuz", "sort_order": 60 }
+      ]
+    },
+    {
+      "code": "tyt_biyoloji",
+      "name": "Biyoloji",
+      "exam_type": "TYT",
+      "icon": "eco",
+      "color": "#2FB344",
+      "sort_order": 60,
+      "is_active": true,
+      "topics": [
+        { "code": "canlilarin_ortak_ozellikleri", "name": "Canlıların Ortak Özellikleri", "sort_order": 10 },
+        { "code": "hucre", "name": "Hücre", "sort_order": 20 },
+        { "code": "canlilarin_siniflandirilmasi", "name": "Canlıların Sınıflandırılması", "sort_order": 30 },
+        { "code": "kalitim", "name": "Kalıtım", "sort_order": 40 },
+        { "code": "ekosistem", "name": "Ekosistem Ekolojisi", "sort_order": 50 },
+        { "code": "sistemler", "name": "Sistemler", "sort_order": 60 }
+      ]
+    },
+    {
+      "code": "tyt_tarih",
+      "name": "Tarih",
+      "exam_type": "TYT",
+      "icon": "account_balance",
+      "color": "#B5651D",
+      "sort_order": 70,
+      "is_active": true,
+      "topics": [
+        { "code": "tarih_bilimi", "name": "Tarih Bilimine Giriş", "sort_order": 10 },
+        { "code": "ilk_turk_devletleri", "name": "İlk Türk Devletleri", "sort_order": 20 },
+        { "code": "islam_tarihi", "name": "İslam Tarihi ve Uygarlığı", "sort_order": 30 },
+        { "code": "osmanli", "name": "Osmanlı Devleti", "sort_order": 40 },
+        { "code": "kurtulus_savasi", "name": "Kurtuluş Savaşı", "sort_order": 50 },
+        { "code": "inkilaplar", "name": "İnkılaplar ve Atatürk İlkeleri", "sort_order": 60 }
+      ]
+    },
+    {
+      "code": "tyt_cografya",
+      "name": "Coğrafya",
+      "exam_type": "TYT",
+      "icon": "public",
+      "color": "#0EA5E9",
+      "sort_order": 80,
+      "is_active": true,
+      "topics": [
+        { "code": "dogal_sistemler", "name": "Doğal Sistemler", "sort_order": 10 },
+        { "code": "iklim", "name": "İklim Bilgisi", "sort_order": 20 },
+        { "code": "turkiye_fiziki", "name": "Türkiye'nin Fiziki Coğrafyası", "sort_order": 30 },
+        { "code": "nufus", "name": "Nüfus ve Yerleşme", "sort_order": 40 },
+        { "code": "ekonomik_faaliyetler", "name": "Ekonomik Faaliyetler", "sort_order": 50 },
+        { "code": "cevre_toplum", "name": "Çevre ve Toplum", "sort_order": 60 }
+      ]
+    },
+    {
+      "code": "tyt_felsefe",
+      "name": "Felsefe",
+      "exam_type": "TYT",
+      "icon": "psychology",
+      "color": "#6366F1",
+      "sort_order": 90,
+      "is_active": true,
+      "topics": [
+        { "code": "felsefeye_giris", "name": "Felsefeye Giriş", "sort_order": 10 },
+        { "code": "bilgi_felsefesi", "name": "Bilgi Felsefesi", "sort_order": 20 },
+        { "code": "varlik_felsefesi", "name": "Varlık Felsefesi", "sort_order": 30 },
+        { "code": "ahlak_felsefesi", "name": "Ahlak Felsefesi", "sort_order": 40 },
+        { "code": "psikoloji", "name": "Psikoloji", "sort_order": 50 },
+        { "code": "sosyoloji", "name": "Sosyoloji", "sort_order": 60 },
+        { "code": "mantik", "name": "Mantık", "sort_order": 70 }
+      ]
+    },
+    {
+      "code": "tyt_din",
+      "name": "Din Kültürü",
+      "exam_type": "TYT",
+      "icon": "auto_stories",
+      "color": "#0F9D8C",
+      "sort_order": 100,
+      "is_active": true,
+      "topics": [
+        { "code": "din_temel_kavramlar", "name": "Bilgi ve İnanç", "sort_order": 10 },
+        { "code": "ibadet", "name": "İbadet", "sort_order": 20 },
+        { "code": "ahlak_deger", "name": "Ahlak ve Değerler", "sort_order": 30 },
+        { "code": "din_kultur_medeniyet", "name": "Din, Kültür ve Medeniyet", "sort_order": 40 }
+      ]
+    },
+
+    {
+      "code": "ayt_matematik",
+      "name": "Matematik (AYT)",
+      "exam_type": "AYT",
+      "icon": "functions",
+      "color": "#4F6BFF",
+      "sort_order": 200,
+      "is_active": false,
+      "topics": [
+        { "code": "ayt_fonksiyonlar", "name": "Fonksiyonlar", "sort_order": 10 },
+        { "code": "ayt_polinomlar", "name": "Polinomlar", "sort_order": 20 },
+        { "code": "ayt_turev", "name": "Türev", "sort_order": 30 },
+        { "code": "ayt_integral", "name": "İntegral", "sort_order": 40 },
+        { "code": "ayt_limit", "name": "Limit ve Süreklilik", "sort_order": 50 }
+      ]
+    },
+    {
+      "code": "ayt_fizik",
+      "name": "Fizik (AYT)",
+      "exam_type": "AYT",
+      "icon": "rocket_launch",
+      "color": "#8A5CF6",
+      "sort_order": 210,
+      "is_active": false,
+      "topics": [
+        { "code": "ayt_vektorler", "name": "Vektörler", "sort_order": 10 },
+        { "code": "ayt_duzgun_dairesel", "name": "Düzgün Çembersel Hareket", "sort_order": 20 },
+        { "code": "ayt_dalgalar", "name": "Dalga Mekaniği", "sort_order": 30 }
+      ]
+    },
+    {
+      "code": "ayt_kimya",
+      "name": "Kimya (AYT)",
+      "exam_type": "AYT",
+      "icon": "biotech",
+      "color": "#F0A500",
+      "sort_order": 220,
+      "is_active": false,
+      "topics": [
+        { "code": "ayt_modern_atom", "name": "Modern Atom Teorisi", "sort_order": 10 },
+        { "code": "ayt_kimyasal_hesaplamalar", "name": "Kimyasal Hesaplamalar", "sort_order": 20 },
+        { "code": "ayt_organik", "name": "Organik Kimya", "sort_order": 30 }
+      ]
+    },
+    {
+      "code": "ayt_biyoloji",
+      "name": "Biyoloji (AYT)",
+      "exam_type": "AYT",
+      "icon": "coronavirus",
+      "color": "#2FB344",
+      "sort_order": 230,
+      "is_active": false,
+      "topics": [
+        { "code": "ayt_sinir_sistemi", "name": "Sinir Sistemi", "sort_order": 10 },
+        { "code": "ayt_genetik", "name": "Genden Proteine", "sort_order": 20 },
+        { "code": "ayt_bitki_biyolojisi", "name": "Bitki Biyolojisi", "sort_order": 30 }
+      ]
+    },
+    {
+      "code": "ayt_edebiyat",
+      "name": "Edebiyat",
+      "exam_type": "AYT",
+      "icon": "history_edu",
+      "color": "#FF6B4F",
+      "sort_order": 240,
+      "is_active": false,
+      "topics": [
+        { "code": "ayt_siir_bilgisi", "name": "Şiir Bilgisi", "sort_order": 10 },
+        { "code": "ayt_divan_edebiyati", "name": "Divan Edebiyatı", "sort_order": 20 },
+        { "code": "ayt_cumhuriyet_donemi", "name": "Cumhuriyet Dönemi", "sort_order": 30 }
+      ]
+    }
+  ]
+}

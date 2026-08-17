@@ -1,0 +1,10 @@
+# Copy to android/key.properties (git-ignored) and fill in before a release
+# build. See README "Android Release Setup".
+storePassword=
+keyPassword=
+keyAlias=upload
+storeFile=/absolute/path/to/upload-keystore.jks
+
+# Optional: production AdMob app id used as a manifest placeholder. The
+# ADMOB_ANDROID_APP_ID environment variable takes precedence.
+admobAppId=

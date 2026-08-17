@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "facts": [
+    { "id": "fact-001", "subject": "tyt_matematik", "text": "Bir üçgende iç açıların ölçüleri toplamı 180°'dir." },
+    { "id": "fact-002", "subject": "tyt_matematik", "text": "Bir sayının rakamları toplamı 9'a bölünüyorsa, sayının kendisi de 9'a bölünür." },
+    { "id": "fact-003", "subject": "tyt_matematik", "text": "İki sayının EBOB'u ile EKOK'unun çarpımı, o iki sayının çarpımına eşittir." },
+    { "id": "fact-004", "subject": "tyt_matematik", "text": "0 sayısı ne pozitif ne de negatiftir; ancak çift sayıdır." },
+    { "id": "fact-005", "subject": "tyt_turkce", "text": "\"Da / de\" bağlacı her zaman ayrı yazılır ve cümleden çıkarıldığında anlam bozulmaz." },
+    { "id": "fact-006", "subject": "tyt_turkce", "text": "Türkçede sıfatlar isimlerin önüne gelir ve onları niteler ya da belirtir." },
+    { "id": "fact-007", "subject": "tyt_turkce", "text": "\"Ki\" bağlacı ayrı, sıfat yapan \"-ki\" eki bitişik yazılır." },
+    { "id": "fact-008", "subject": "tyt_turkce", "text": "Paragraf sorularında ana düşünce, genellikle parçanın tamamını kapsayan yargıdır." },
+    { "id": "fact-009", "subject": "tyt_fizik", "text": "Katı basıncı P = F / A bağıntısıyla hesaplanır; yüzey alanı büyüdükçe basınç azalır." },
+    { "id": "fact-010", "subject": "tyt_fizik", "text": "Yoğunluk maddeler için ayırt edici bir özelliktir; kütle ve hacme bağlı değildir." },
+    { "id": "fact-011", "subject": "tyt_fizik", "text": "Enerji yoktan var edilemez, var olan yok edilemez; yalnızca biçim değiştirir." },
+    { "id": "fact-012", "subject": "tyt_kimya", "text": "Nötr bir atomda proton sayısı elektron sayısına eşittir." },
+    { "id": "fact-013", "subject": "tyt_kimya", "text": "Periyodik tabloda soldan sağa gidildikçe atom yarıçapı genel olarak küçülür." },
+    { "id": "fact-014", "subject": "tyt_kimya", "text": "Homojen karışımlara çözelti denir; her yerinde aynı özelliği gösterirler." },
+    { "id": "fact-015", "subject": "tyt_biyoloji", "text": "Kloroplast yalnızca bitki hücrelerinde bulunur ve fotosentezin gerçekleştiği organeldir." },
+    { "id": "fact-016", "subject": "tyt_biyoloji", "text": "Mitokondri, hücrenin enerji üretim merkezidir ve kendi DNA'sına sahiptir." },
+    { "id": "fact-017", "subject": "tyt_tarih", "text": "TBMM 23 Nisan 1920'de Ankara'da açılmıştır." },
+    { "id": "fact-018", "subject": "tyt_tarih", "text": "Bilinen ilk teşkilatlı Türk devleti Asya Hun Devleti'dir." },
+    { "id": "fact-019", "subject": "tyt_cografya", "text": "Türkiye'nin matematik konumu, dört mevsimin belirgin şekilde yaşanmasını sağlar." },
+    { "id": "fact-020", "subject": "tyt_cografya", "text": "Akdeniz ikliminde yağışlar kış mevsiminde yoğunlaşır, yazlar sıcak ve kuraktır." },
+    { "id": "fact-021", "subject": "tyt_felsefe", "text": "Felsefe sözcüğü Yunanca \"bilgelik sevgisi\" anlamına gelir." },
+    { "id": "fact-022", "subject": "tyt_felsefe", "text": "Rasyonalizm bilginin kaynağını akılda, empirizm ise deneyimde arar." },
+    { "id": "fact-023", "subject": "tyt_geometri", "text": "Bir dik üçgende hipotenüsün karesi, dik kenarların kareleri toplamına eşittir." },
+    { "id": "fact-024", "subject": "tyt_geometri", "text": "Çemberde aynı yayı gören çevre açı, merkez açının yarısıdır." },
+    { "id": "fact-025", "subject": "tyt_din", "text": "İslam'ın beş şartından biri olan oruç, Ramazan ayı boyunca tutulur." }
+  ]
+}
