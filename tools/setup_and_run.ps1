@@ -130,7 +130,42 @@ if (-not $Device) {
             "phone instead."
     }
   }
-  Start-Process -FilePath "$Sdk\emulator\emulator.exe" -ArgumentList '-avd', 'yks_level'
+  # Start-Process alone is fire-and-forget: if the emulator crashes on launch
+  # (missing hardware virtualization is the usual reason) the script would
+  # never find out and `adb wait-for-device` below would hang forever with no
+  # explanation. Capture its output and check it is still running before
+  # waiting for a device.
+  $emuLog = "$Root\emulator.log"
+  $emuErr = "$Root\emulator-error.log"
+  Remove-Item $emuLog, $emuErr -ErrorAction SilentlyContinue
+  $emuProcess = Start-Process -FilePath "$Sdk\emulator\emulator.exe" `
+    -ArgumentList '-avd', 'yks_level' `
+    -RedirectStandardOutput $emuLog -RedirectStandardError $emuErr -PassThru
+
+  Write-Host "    launching the emulator..."
+  Start-Sleep 8
+  if ($emuProcess.HasExited) {
+    Write-Host ""
+    Write-Host "    The emulator process exited immediately (exit code $($emuProcess.ExitCode))." -ForegroundColor Red
+    if (Test-Path $emuErr) {
+      Write-Host "    Its error output:" -ForegroundColor Red
+      Get-Content $emuErr | ForEach-Object { Write-Host "      $_" -ForegroundColor Red }
+    }
+    Write-Host ""
+    Write-Host "    This is almost always one of:" -ForegroundColor Yellow
+    Write-Host "      - Hardware virtualization is off. Task Manager > Performance > CPU" -ForegroundColor Yellow
+    Write-Host "        should say Virtualization: Enabled. If not: enable VT-x/AMD-V in" -ForegroundColor Yellow
+    Write-Host "        your BIOS, then turn on 'Windows Hypervisor Platform' under" -ForegroundColor Yellow
+    Write-Host "        'Turn Windows features on or off'." -ForegroundColor Yellow
+    Write-Host "      - Antivirus (incl. Windows Defender) quarantined or blocked a file" -ForegroundColor Yellow
+    Write-Host "        under $Sdk\emulator -- add that folder to its exclusions." -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "    Fastest way past this: plug in an Android phone over USB (enable" -ForegroundColor Yellow
+    Write-Host "    USB debugging in Developer options) and re-run this script with" -ForegroundColor Yellow
+    Write-Host "    -Device." -ForegroundColor Yellow
+    throw "Emulator failed to start. See the error above."
+  }
+
   Write-Host "    waiting for the device to appear..."
   adb wait-for-device
 

@@ -106,7 +106,32 @@ if (( USE_EMULATOR )); then
   step "Creating and starting the emulator"
   avdmanager list avd | grep -q yks_level || \
     echo no | avdmanager create avd -n yks_level -k "$SYSTEM_IMAGE" -d pixel_7
-  "$SDK/emulator/emulator" -avd yks_level >/dev/null 2>&1 &
+  # Backgrounding alone is fire-and-forget: if the emulator crashes on launch
+  # (missing hardware virtualization is the usual reason) the script would
+  # never find out and `adb wait-for-device` below would hang forever with no
+  # explanation. Capture its output and check it is still running first.
+  EMU_LOG="$ROOT/emulator.log"
+  "$SDK/emulator/emulator" -avd yks_level >"$EMU_LOG" 2>&1 &
+  EMU_PID=$!
+
+  echo "    launching the emulator..."
+  sleep 8
+  if ! kill -0 "$EMU_PID" 2>/dev/null; then
+    echo "" >&2
+    echo "    The emulator process exited immediately. Its output:" >&2
+    sed 's/^/      /' "$EMU_LOG" >&2
+    echo "" >&2
+    echo "    This is almost always one of:" >&2
+    echo "      - Missing hardware virtualization. On Linux, check 'kvm-ok' or that" >&2
+    echo "        /dev/kvm exists; nested virtualization (inside a VM/container)" >&2
+    echo "        commonly blocks it entirely." >&2
+    echo "      - Another hypervisor holding the same CPU virtualization extensions." >&2
+    echo "" >&2
+    echo "    Fastest way past this: plug in an Android phone over USB (enable USB" >&2
+    echo "    debugging in Developer options) and re-run this script with --device." >&2
+    exit 1
+  fi
+
   echo "    waiting for the device to appear..."
   adb wait-for-device
 
