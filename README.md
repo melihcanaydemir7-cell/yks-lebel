@@ -519,8 +519,8 @@ Release builds have R8 minification and resource shrinking on; rules are in
 
 - [ ] App name (30 chars), short description (80), full description (4000)
 - [ ] Feature graphic **1024×500 PNG/JPG** (required)
-- [ ] At least **2** phone screenshots, 16:9 or 9:16, min 320px on the short side
-  — suggested: home screen, quiz feedback, result screen, leaderboard, profile
+- [ ] At least **2** phone screenshots, 16:9 or 9:16, min 320px on the short side.
+  `screenshots/` already holds 15 rendered at 1170×2532 — see below.
 - [ ] App icon 512×512 PNG
 - [ ] Category: **Education**
 - [ ] Turkish (`tr-TR`) as the default listing language
@@ -577,6 +577,23 @@ The events for these are already wired:
 | Sessions per user per day | `quiz_started` |
 | Rewarded-ad opt-in rate | `rewarded_ad_completed` / `rewarded_ad_offered` |
 | Premium conversion | `subscription_success` / `premium_screen_viewed` |
+
+### Regenerating the screenshots
+
+The screens are rendered headlessly, so store screenshots never need a device
+and stay in sync with the code:
+
+```bash
+# Optional: a colour-emoji font, otherwise emoji render as tofu.
+# Subset it first — the full Noto Color Emoji is 25 MB and rasterises slowly.
+GENERATE_SCREENSHOTS=1 EMOJI_FONT=/path/to/NotoColorEmoji.ttf \
+  flutter test test/screenshots
+```
+
+Output lands in `screenshots/` at 390×844 logical / 1170×2532 physical pixels.
+The generator is skipped during a normal `flutter test` run, so it never slows
+CI down. Note these are *rendered* screens, not captures from a running device
+— verify on real hardware before uploading.
 
 ---
 

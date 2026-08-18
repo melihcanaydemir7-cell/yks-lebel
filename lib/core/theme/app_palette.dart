@@ -6,6 +6,11 @@ class AppPalette {
   const AppPalette._();
 
   static const Color primary = Color(0xFF4F6BFF);
+
+  /// Lightened brand tone for dark surfaces, where the saturated blue does
+  /// not carry enough contrast.
+  static const Color primaryOnDark = Color(0xFFA9B8FF);
+  static const Color onPrimaryDark = Color(0xFF11183A);
   static const Color secondary = Color(0xFF8A5CF6);
   static const Color success = Color(0xFF22C55E);
   static const Color successDark = Color(0xFF16A34A);

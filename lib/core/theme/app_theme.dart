@@ -15,11 +15,19 @@ class AppTheme {
   static ThemeData dark() => _build(Brightness.dark);
 
   static ThemeData _build(Brightness brightness) {
+    final isLight = brightness == Brightness.light;
+
+    // The generated tonal palette is kept for surfaces and containers, but the
+    // primary role is pinned to the brand blue: Material 3 desaturates a seed
+    // this saturated into a muted indigo, which reads corporate rather than
+    // game-like on the big CTAs.
     final scheme = ColorScheme.fromSeed(
       seedColor: AppPalette.primary,
       brightness: brightness,
+    ).copyWith(
+      primary: isLight ? AppPalette.primary : AppPalette.primaryOnDark,
+      onPrimary: isLight ? Colors.white : AppPalette.onPrimaryDark,
     );
-    final isLight = brightness == Brightness.light;
 
     final base = ThemeData(
       useMaterial3: true,

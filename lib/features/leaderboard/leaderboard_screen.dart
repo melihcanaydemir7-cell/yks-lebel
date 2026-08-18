@@ -43,8 +43,7 @@ class _LeaderboardScreenState extends ConsumerState<LeaderboardScreen> {
     final user = ref.watch(currentUserProvider);
     final progress = ref.watch(progressControllerProvider);
     final league = ref.watch(leagueProvider);
-    final canCompete =
-        user.isSignedIn && ref.watch(leaderboardRepositoryProvider).isAvailable;
+    final canCompete = user.isSignedIn && ref.watch(leaderboardAvailableProvider);
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.leagueTitle)),

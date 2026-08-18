@@ -38,6 +38,12 @@ final leaderboardRepositoryProvider = Provider<LeaderboardRepository>(
   (ref) => LeaderboardRepository(ref.watch(supabaseClientProvider)),
 );
 
+/// False when Supabase is not configured, so the league tab can show a
+/// sign-in prompt instead of an endless spinner.
+final leaderboardAvailableProvider = Provider<bool>(
+  (ref) => ref.watch(leaderboardRepositoryProvider).isAvailable,
+);
+
 final syncServiceProvider = Provider<SyncService>(
   (ref) => SyncService(ref.watch(supabaseClientProvider)),
 );
