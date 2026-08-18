@@ -75,11 +75,23 @@ fi
 export ANDROID_HOME="$SDK" ANDROID_SDK_ROOT="$SDK"
 export PATH="$SDK/cmdline-tools/latest/bin:$SDK/platform-tools:$SDK/emulator:$PATH"
 
-step "Accepting SDK licences and installing components (this is the slow part)"
+step "Accepting SDK licences"
 yes | sdkmanager --licenses >/dev/null 2>&1 || true
-PACKAGES=(platform-tools "platforms;android-36" "build-tools;36.0.0")
+
+step "Installing Android SDK components (this is the slow part)"
+# The exact platform + build-tools this Flutter version needs are left for
+# Gradle to auto-download on the first build, now that every licence has been
+# accepted -- that avoids hardcoding a platform number that may not exist yet.
+PACKAGES=(platform-tools)
 (( USE_EMULATOR )) && PACKAGES+=(emulator "$SYSTEM_IMAGE")
 sdkmanager "${PACKAGES[@]}" >/dev/null
+
+if (( USE_EMULATOR )) && [[ ! -x "$SDK/emulator/emulator" ]]; then
+  echo "error: emulator package reported success but $SDK/emulator/emulator is still missing." >&2
+  echo "       re-run this script, or pass --device to use a USB-connected phone instead." >&2
+  exit 1
+fi
+
 flutter config --android-sdk "$SDK" >/dev/null
 
 step "Cloning the project"

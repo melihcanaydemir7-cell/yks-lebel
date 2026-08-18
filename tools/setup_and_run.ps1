@@ -70,11 +70,37 @@ $env:ANDROID_HOME     = $Sdk
 $env:ANDROID_SDK_ROOT = $Sdk
 $env:PATH             = "$Sdk\cmdline-tools\latest\bin;$Sdk\platform-tools;$Sdk\emulator;$env:PATH"
 
-Step "Accepting SDK licences and installing components (this is the slow part)"
-cmd /c "echo y| sdkmanager.bat --licenses" | Out-Null
-$packages = @('platform-tools', 'platforms;android-36', 'build-tools;36.0.0')
+Step "Accepting SDK licences"
+# sdkmanager prompts once per licence (SDK licence, preview licence, extras
+# licence, ...) and treats a closed stdin as declining whatever it hasn't
+# asked yet. Piping a single "y" (e.g. via `cmd /c "echo y| ..."`) answers
+# only the first prompt, so later packages -- the emulator among them -- fail
+# to install without the script noticing. Piping 25 answers covers every
+# licence Android currently ships.
+1..25 | ForEach-Object { 'y' } | & sdkmanager.bat --licenses *> $null
+
+Step "Installing Android SDK components (this is the slow part)"
+# The exact platform + build-tools this Flutter version needs are left for
+# Gradle to auto-download on the first build. That only works because every
+# licence was just accepted above; it also means this script never has to
+# guess a platform number that may not exist yet.
+$packages = @('platform-tools')
 if (-not $Device) { $packages += @('emulator', $SystemImage) }
-cmd /c "sdkmanager.bat $($packages -join ' ')"
+foreach ($pkg in $packages) {
+  Write-Host "    installing $pkg"
+  & sdkmanager.bat $pkg
+  if ($LASTEXITCODE -ne 0) {
+    throw "sdkmanager failed to install '$pkg' (exit $LASTEXITCODE). Re-run " +
+          "this script -- everything already downloaded is skipped, so it " +
+          "will only retry this step."
+  }
+}
+
+if (-not $Device -and -not (Test-Path "$Sdk\emulator\emulator.exe")) {
+  throw "The emulator package reported success but $Sdk\emulator\emulator.exe " +
+        "is still missing. Re-run this script, or pass -Device to use a " +
+        "USB-connected phone instead."
+}
 
 flutter config --android-sdk $Sdk | Out-Null
 
@@ -94,8 +120,15 @@ flutter pub get
 # ------------------------------------------------------------------- device
 if (-not $Device) {
   Step "Creating and starting the emulator"
-  if (-not (avdmanager.bat list avd | Select-String 'yks_level')) {
-    cmd /c "echo no| avdmanager.bat create avd -n yks_level -k `"$SystemImage`" -d pixel_7"
+  $existingAvds = & avdmanager.bat list avd
+  if (-not ($existingAvds | Select-String 'yks_level')) {
+    Write-Host "    creating the yks_level AVD"
+    'no' | & avdmanager.bat create avd -n yks_level -k $SystemImage -d pixel_7
+    if ($LASTEXITCODE -ne 0) {
+      throw "avdmanager failed to create the emulator (exit $LASTEXITCODE). " +
+            "Re-run this script, or pass -Device to use a USB-connected " +
+            "phone instead."
+    }
   }
   Start-Process -FilePath "$Sdk\emulator\emulator.exe" -ArgumentList '-avd', 'yks_level'
   Write-Host "    waiting for the emulator to boot..."
