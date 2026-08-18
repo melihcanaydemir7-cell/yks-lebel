@@ -107,9 +107,46 @@ if (( USE_EMULATOR )); then
   avdmanager list avd | grep -q yks_level || \
     echo no | avdmanager create avd -n yks_level -k "$SYSTEM_IMAGE" -d pixel_7
   "$SDK/emulator/emulator" -avd yks_level >/dev/null 2>&1 &
-  echo "    waiting for the emulator to boot..."
+  echo "    waiting for the device to appear..."
   adb wait-for-device
-  until [[ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" == "1" ]]; do sleep 2; done
+
+  # A silent multi-minute hang here is almost always missing hardware
+  # virtualization (VT-x/AMD-V off in BIOS/firmware, or KVM not available on
+  # Linux), or another hypervisor holding the same CPU extensions. Report
+  # progress and, past 90s, say so instead of a frozen-looking terminal.
+  echo "    device connected, waiting for Android to finish booting"
+  boot_start=$(date +%s)
+  hint_shown=0
+  while [[ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" != "1" ]]; do
+    elapsed=$(( $(date +%s) - boot_start ))
+    echo "    ... still booting (${elapsed}s)"
+
+    if (( elapsed > 90 && ! hint_shown )); then
+      hint_shown=1
+      cat <<MSG
+
+    Taking a while. Likely causes:
+      - Hardware virtualization is off or unavailable. On Linux, run
+        'kvm-ok' (or check /dev/kvm exists); on macOS this is rarely the
+        issue. Nested virtualization (a VM, some CI containers) can also
+        block it entirely.
+      - Another hypervisor is holding the same CPU virtualization extensions.
+      - The emulator crashed silently -- check 'ps aux | grep qemu'; if
+        nothing is there, it crashed.
+
+    Fastest way past this: plug in an Android phone over USB (enable USB
+    debugging in Developer options) and re-run this script with --device.
+
+MSG
+    fi
+
+    if (( elapsed > 360 )); then
+      echo "error: emulator did not finish booting after 6 minutes." >&2
+      echo "       see the hints above, or re-run with --device to use a USB-connected phone instead." >&2
+      exit 1
+    fi
+    sleep 10
+  done
 fi
 
 step "Launching YKS Level"

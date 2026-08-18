@@ -131,9 +131,47 @@ if (-not $Device) {
     }
   }
   Start-Process -FilePath "$Sdk\emulator\emulator.exe" -ArgumentList '-avd', 'yks_level'
-  Write-Host "    waiting for the emulator to boot..."
+  Write-Host "    waiting for the device to appear..."
   adb wait-for-device
-  do { Start-Sleep 2 } until ((adb shell getprop sys.boot_completed 2>$null) -match '1')
+
+  # A silent multi-minute hang here is almost always Windows lacking hardware
+  # virtualization (VT-x/AMD-V off in BIOS, or Windows Hypervisor Platform not
+  # enabled), or another hypervisor (VirtualBox/Docker Desktop/WSL2/VMware)
+  # holding the same CPU extensions. Report progress and, past 90s, say so
+  # instead of leaving the user staring at a frozen-looking terminal.
+  Write-Host "    device connected, waiting for Android to finish booting"
+  $bootStart = Get-Date
+  $hintShown = $false
+  while ((adb shell getprop sys.boot_completed 2>$null) -notmatch '1') {
+    $elapsed = [int]((Get-Date) - $bootStart).TotalSeconds
+    Write-Host "    ... still booting (${elapsed}s)"
+
+    if ($elapsed -gt 90 -and -not $hintShown) {
+      $hintShown = $true
+      Write-Host ""
+      Write-Host "    Taking a while. Likely causes:" -ForegroundColor Yellow
+      Write-Host "      - Hardware virtualization is off. Task Manager > Performance >" -ForegroundColor Yellow
+      Write-Host "        CPU should say Virtualization: Enabled. If not: enable VT-x /" -ForegroundColor Yellow
+      Write-Host "        AMD-V in your BIOS, then turn on 'Windows Hypervisor Platform'" -ForegroundColor Yellow
+      Write-Host "        under 'Turn Windows features on or off'." -ForegroundColor Yellow
+      Write-Host "      - Another hypervisor (VirtualBox, Docker Desktop, WSL2, VMware) is" -ForegroundColor Yellow
+      Write-Host "        holding the same CPU virtualization extensions." -ForegroundColor Yellow
+      Write-Host "      - The emulator crashed silently -- check Task Manager for a" -ForegroundColor Yellow
+      Write-Host "        'qemu-system-x86_64' process; if it's gone, it crashed." -ForegroundColor Yellow
+      Write-Host ""
+      Write-Host "    Fastest way past this: plug in an Android phone over USB (enable" -ForegroundColor Yellow
+      Write-Host "    USB debugging in Developer options) and re-run this script with" -ForegroundColor Yellow
+      Write-Host "    -Device." -ForegroundColor Yellow
+      Write-Host ""
+    }
+
+    if ($elapsed -gt 360) {
+      throw "Emulator did not finish booting after 6 minutes. See the hints " +
+            "above, or re-run this script with -Device to use a USB-connected " +
+            "phone instead."
+    }
+    Start-Sleep 10
+  }
 }
 
 Step "Launching YKS Level"
