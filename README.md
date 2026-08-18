@@ -157,6 +157,8 @@ flutter doctor
 
 ## 4. Flutter setup
 
+### Already have Flutter + the Android SDK?
+
 ```bash
 git clone <your-repo-url> yks-level
 cd yks-level
@@ -171,6 +173,34 @@ flutter run
 > `lib/l10n/app_localizations*.dart` is generated and git-ignored. If your IDE
 > shows missing-import errors on a fresh clone, run `flutter pub get`
 > (or `flutter gen-l10n`).
+
+### Starting from nothing
+
+`tools/setup_and_run.sh` (macOS/Linux) and `tools/setup_and_run.ps1` (Windows)
+download a JDK, the Flutter SDK and the Android command-line tools into a
+single throwaway folder, spin up an emulator, clone this repo and launch the
+app — one command, no Android Studio, nothing installed system-wide:
+
+```bash
+# macOS / Linux
+curl -fsSL https://raw.githubusercontent.com/melihcanaydemir7-cell/yks-lebel/claude/yks-level-android-mvp-5zpf5w/tools/setup_and_run.sh | bash
+```
+
+```powershell
+# Windows (PowerShell)
+irm https://raw.githubusercontent.com/melihcanaydemir7-cell/yks-lebel/claude/yks-level-android-mvp-5zpf5w/tools/setup_and_run.ps1 | iex
+```
+
+Everything lands under `~/yks-level-dev` (`$env:USERPROFILE\yks-level-dev` on
+Windows); delete that folder when you're done and no trace is left elsewhere on
+the machine. Expect ~4 GB of downloads and 10–20 minutes on the first run —
+mostly the Android SDK and the emulator system image. Pass `--device`
+(`-Device` on Windows) to skip creating an emulator and run on a USB-connected
+phone instead. Once it's running, `r` in the terminal hot-reloads, `q` quits.
+
+Read the script before piping it into your shell if you'd rather not run
+something sight-unseen — it's ~100 lines and does nothing beyond what's
+described above.
 
 ---
 
